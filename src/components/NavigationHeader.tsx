@@ -1,5 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import {HStack, StatusBar} from 'native-base';
+import {colors} from 'providers/Theme/colors';
 import {ReactNode} from 'react';
 
 import {Icon} from './Icon';
@@ -40,7 +41,7 @@ export function NavigationHeader(props: Props) {
 
   return (
     <>
-      <StatusBar barStyle="light-content" />
+      <StatusBar barStyle="light-content" backgroundColor={colors.black} />
       <HStack
         bg="brand.black"
         p={4}

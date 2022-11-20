@@ -1,20 +1,25 @@
-import {Button} from 'native-base';
-import {Icon} from './Icon';
+import {Box, Button} from 'native-base';
+import {useNavigation} from '@react-navigation/native';
 
-type Props = {
-  onPress: () => void;
-};
-export function FloatPencilButton({onPress}: Props) {
+import {Icon} from './Icon';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+
+export function FloatPencilButton() {
+  const navigation = useNavigation();
+  const insets = useSafeAreaInsets();
   return (
-    <Button
-      rounded="full"
+    <Box
       position="absolute"
-      bottom={5}
       right={5}
-      w={45}
-      h={45}
-      onPress={onPress}>
-      <Icon name="pencil-outline" color="white" size={25} />
-    </Button>
+      top="auto"
+      bottom={insets.bottom > 0 ? insets.bottom + 100 : 100}>
+      <Button
+        rounded="full"
+        onPress={() => navigation.navigate('PostForm')}
+        w={45}
+        h={45}>
+        <Icon name="pencil-outline" color="white" size={25} />
+      </Button>
+    </Box>
   );
 }

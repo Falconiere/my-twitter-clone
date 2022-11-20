@@ -26,7 +26,7 @@ export function PostItem(props: Props) {
             </Text>
           </HStack>
           <Text color="white">{text}</Text>
-          <Row justifyContent="space-between">
+          <Row justifyContent="space-between" py={2}>
             <ButtonIcon
               name="comment-outline"
               color="white"

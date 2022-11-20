@@ -1,13 +1,13 @@
+import {Text, View} from 'native-base';
+import {AvatarHeader} from 'components/AvatarHeader';
 import {NavigationHeader} from 'components/NavigationHeader';
-import {avatarUrl} from 'mocks/twitters';
-import {Avatar, Text, View} from 'native-base';
 
 export function Community() {
   return (
     <>
       <NavigationHeader
         safeAreaTop
-        headerLeft={<Avatar source={{uri: avatarUrl}} size="xs" />}
+        headerLeft={<AvatarHeader />}
         headerCenter={
           <Text color="white" fontWeight="bold">
             Community

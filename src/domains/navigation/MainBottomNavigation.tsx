@@ -11,17 +11,18 @@ import {colors} from 'providers/Theme/colors';
 const Tab = createMaterialBottomTabNavigator();
 export const MainBottomNavigation = () => (
   <Tab.Navigator
-    barStyle={{backgroundColor: colors.brand.black, paddingTop: 8}}
-    inactiveColor={colors.brand.gray}
+    barStyle={{backgroundColor: colors.brand.black}}
+    inactiveColor={colors.brand.lightGray}
     activeColor={colors.brand.white}
     shifting={false}>
     <Tab.Screen
       name="Home"
       component={Home}
       options={{
+        title: '',
         tabBarLabel: '',
         tabBarIcon: ({color}) => (
-          <Icon name="home" family="Feather" color={color} size={20} />
+          <Icon name="home" family="Feather" color={color} size={25} />
         ),
       }}
     />
@@ -29,9 +30,10 @@ export const MainBottomNavigation = () => (
       name="Explorer"
       component={Explorer}
       options={{
+        title: '',
         tabBarLabel: '',
         tabBarIcon: ({color}) => (
-          <Icon name="search" family="Feather" color={color} size={20} />
+          <Icon name="search" family="Feather" color={color} size={25} />
         ),
       }}
     />
@@ -39,9 +41,10 @@ export const MainBottomNavigation = () => (
       name="Community"
       component={Community}
       options={{
+        title: '',
         tabBarLabel: '',
         tabBarIcon: ({color}) => (
-          <Icon name="users" family="Feather" color={color} size={20} />
+          <Icon name="users" family="Feather" color={color} size={25} />
         ),
       }}
     />
@@ -49,9 +52,10 @@ export const MainBottomNavigation = () => (
       name="Notifications"
       component={Notifications}
       options={{
+        title: '',
         tabBarLabel: '',
         tabBarIcon: ({color}) => (
-          <Icon name="bell" family="Feather" color={color} size={20} />
+          <Icon name="bell" family="Feather" color={color} size={25} />
         ),
       }}
     />
@@ -59,13 +63,14 @@ export const MainBottomNavigation = () => (
       name="Messages"
       component={Messages}
       options={{
+        title: '',
         tabBarLabel: '',
         tabBarIcon: ({color}) => (
           <Icon
             name="message-square"
             family="Feather"
             color={color}
-            size={20}
+            size={25}
           />
         ),
       }}

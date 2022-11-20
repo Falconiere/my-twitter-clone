@@ -1,4 +1,4 @@
-import {Divider, FlatList, Text} from 'native-base';
+import {Box, Divider, FlatList, Text, View} from 'native-base';
 
 import {useTimeLine} from 'api/queries/useTimeLine';
 
@@ -26,9 +26,16 @@ export function Home() {
         data={data}
         renderItem={renderItem}
         ItemSeparatorComponent={() => <Divider bg="brand.gray" />}
+        ListEmptyComponent={() => (
+          <View alignItems="center" justifyItems="center" h="100%" flex={1}>
+            <Box m="auto">
+              <Text color="white">No data available :/</Text>
+            </Box>
+          </View>
+        )}
         bg="brand.darkBlue"
         p="4"
-        flex={1}
+        contentContainerStyle={{flex: 1}}
       />
     </>
   );

@@ -1,4 +1,4 @@
-import {Avatar, Divider, FlatList} from 'native-base';
+import {Avatar, Divider, FlatList, Text} from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 
 import {useTimeLine} from 'api/queries/useTimeLine';
@@ -20,6 +20,11 @@ export function Home() {
       <NavigationHeader
         safeAreaTop
         headerLeft={<Avatar source={{uri: avatarUrl}} size="xs" />}
+        headerCenter={
+          <Text color="white" fontWeight="bold">
+            Home
+          </Text>
+        }
       />
       <FlatList
         data={data}

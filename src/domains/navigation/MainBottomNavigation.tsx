@@ -11,16 +11,17 @@ import {colors} from 'providers/Theme/colors';
 const Tab = createMaterialBottomTabNavigator();
 export const MainBottomNavigation = () => (
   <Tab.Navigator
-    barStyle={{backgroundColor: colors.brand.black}}
+    barStyle={{backgroundColor: colors.brand.black, paddingTop: 8}}
     inactiveColor={colors.brand.gray}
-    activeColor={colors.brand.white}>
+    activeColor={colors.brand.white}
+    shifting={false}>
     <Tab.Screen
       name="Home"
       component={Home}
       options={{
         tabBarLabel: '',
         tabBarIcon: ({color}) => (
-          <Icon name="home" family="Feather" color={color} />
+          <Icon name="home" family="Feather" color={color} size={20} />
         ),
       }}
     />
@@ -30,7 +31,7 @@ export const MainBottomNavigation = () => (
       options={{
         tabBarLabel: '',
         tabBarIcon: ({color}) => (
-          <Icon name="search" family="Feather" color={color} />
+          <Icon name="search" family="Feather" color={color} size={20} />
         ),
       }}
     />
@@ -40,7 +41,7 @@ export const MainBottomNavigation = () => (
       options={{
         tabBarLabel: '',
         tabBarIcon: ({color}) => (
-          <Icon name="users" family="Feather" color={color} />
+          <Icon name="users" family="Feather" color={color} size={20} />
         ),
       }}
     />
@@ -50,7 +51,7 @@ export const MainBottomNavigation = () => (
       options={{
         tabBarLabel: '',
         tabBarIcon: ({color}) => (
-          <Icon name="bell" family="Feather" color={color} />
+          <Icon name="bell" family="Feather" color={color} size={20} />
         ),
       }}
     />
@@ -60,7 +61,12 @@ export const MainBottomNavigation = () => (
       options={{
         tabBarLabel: '',
         tabBarIcon: ({color}) => (
-          <Icon name="message-square" family="Feather" color={color} />
+          <Icon
+            name="message-square"
+            family="Feather"
+            color={color}
+            size={20}
+          />
         ),
       }}
     />

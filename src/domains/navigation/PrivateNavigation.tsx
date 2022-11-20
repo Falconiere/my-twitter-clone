@@ -1,19 +1,17 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {PostForm} from 'domains/timeline/screens/PostForm';
-import {MainBottomNavigation} from './MainBottomNavigation';
 
-const {Navigator, Screen, Group} = createNativeStackNavigator();
+import {SideBarNavigation} from './SideBarNavigation';
+
+const Stack = createNativeStackNavigator();
 
 export function PrivateNavigation() {
   return (
-    <Navigator screenOptions={{headerShown: false}}>
-      <Screen name="MainBottomNavigation" component={MainBottomNavigation} />
-      <Group
-        screenOptions={{
-          presentation: 'modal',
-        }}>
-        <Screen name="PostForm" component={PostForm} />
-      </Group>
-    </Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="SideBarNavigation" component={SideBarNavigation} />
+      <Stack.Group screenOptions={{presentation: 'modal'}}>
+        <Stack.Screen name="PostForm" component={PostForm} />
+      </Stack.Group>
+    </Stack.Navigator>
   );
 }

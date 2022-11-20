@@ -1,5 +1,5 @@
-import type {CompositeNavigationProp} from '@react-navigation/native';
 import type {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import type {DrawerNavigationProp} from '@react-navigation/drawer';
 
 export type MainBottomNavigationList = BottomTabNavigationProp<{
   Home: undefined;
@@ -9,16 +9,14 @@ export type MainBottomNavigationList = BottomTabNavigationProp<{
   Messages: undefined;
 }>;
 
-export type PrivateNavigationList = CompositeNavigationProp<{
-  MainBottomNavigation: MainBottomNavigationList;
-  PostForm: undefined;
+export type PrivateNavigationList = DrawerNavigationProp<{
+  MainBottomNavigationList;
 }>;
 
-export type RouteList = {
+export interface RootStackParamList {
   PrivateNavigation: PrivateNavigationList;
   PostForm: undefined;
-};
-export interface RootStackParamList extends RouteList {}
+}
 
 declare global {
   namespace ReactNavigation {

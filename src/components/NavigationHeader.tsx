@@ -33,7 +33,7 @@ export function NavigationHeader(props: Props) {
       onPressLeft();
       return;
     }
-    if (!hideBackButton && navigation.canGoBack()) {
+    if (!hideBackButton && !headerLeft && navigation.canGoBack()) {
       navigation.goBack();
     }
   };

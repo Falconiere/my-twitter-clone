@@ -1,6 +1,7 @@
 /**
  * @format
  */
+import 'react-native-gesture-handler';
 
 import {AppRegistry} from 'react-native';
 import {Routes as App} from './src/routes';

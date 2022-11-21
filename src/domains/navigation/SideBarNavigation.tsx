@@ -8,7 +8,7 @@ const Drawer = createDrawerNavigator();
 const routes = [
   {
     label: 'Home',
-    route: 'Home',
+    routeName: 'PostForm',
   },
 ] as DrawerContentItem[];
 

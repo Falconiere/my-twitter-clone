@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 
 import {Icon, IIconFamily} from 'components/Icon';
 import {Pressable} from './Pressable';
+import {Row} from 'native-base';
 
 type Props = {
   name: string;
@@ -35,8 +36,10 @@ export function ButtonIcon(props: Props) {
       style={style}
       testID={testID}
       disabled={disabled}>
-      <Icon name={name} color={color} size={size} family={family} />
-      {rightText}
+      <Row space={2}>
+        <Icon name={name} color={color} size={size} family={family} />
+        {rightText}
+      </Row>
     </Pressable>
   );
 }

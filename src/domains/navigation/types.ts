@@ -12,7 +12,7 @@ export type PrivateNavigationList = DrawerNavigationProp<{
   MainBottomNavigationList: MainBottomNavigationList;
 }>;
 
-export interface RootStackParamList {
+export type RootStackParamList = {
   Home: undefined;
   Explorer: undefined;
   Community: undefined;
@@ -20,7 +20,7 @@ export interface RootStackParamList {
   Messages: undefined;
   PostForm: undefined;
   PrivateNavigation: PrivateNavigationList;
-}
+};
 
 export type Routes = {
   [key in keyof Omit<RootStackParamList, 'PrivateNavigation'>]: key;

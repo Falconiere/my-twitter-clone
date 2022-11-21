@@ -1,13 +1,14 @@
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {PrivateNavigation} from 'domains/navigation/PrivateNavigation';
+import {RootStackParamList} from 'domains/navigation/types';
 
 import {QueryClientProvider} from 'providers/QueryClient';
 
 import {ThemeProvider} from 'providers/Theme';
 
-const RootStack = createStackNavigator();
+const RootStack = createNativeStackNavigator<RootStackParamList>();
 export function Routes() {
   return (
     <QueryClientProvider>

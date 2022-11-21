@@ -1,12 +1,13 @@
-import {ScrollView} from 'native-base';
-import {useNavigation} from '@react-navigation/native';
+import {Avatar, Column, Row, ScrollView, Text} from 'native-base';
+import {DrawerActions, useNavigation} from '@react-navigation/native';
 
 import {Pressable} from './Pressable';
 import {Routes} from 'domains/navigation/types';
+import {avatarUrl} from 'mocks/twitters';
 
 export type DrawerContentItem = {
   label: string;
-  route: keyof Routes;
+  routeName: keyof Routes;
 };
 
 type DrawerContentProps = {
@@ -16,14 +17,29 @@ type DrawerContentProps = {
 export function DrawerContent(props: DrawerContentProps) {
   const {routes} = props;
   const navigation = useNavigation();
+  const handleNavigation = (route: keyof Routes) => {
+    navigation.navigate(route);
+    navigation.dispatch(DrawerActions.toggleDrawer());
+  };
 
   return (
-    <ScrollView bg="brand.black">
-      {routes.map(route => (
+    <ScrollView bg="brand.black" p="4">
+      <Row safeAreaTop space={2}>
+        <Avatar source={{uri: avatarUrl}} />
+        <Column>
+          <Text color="white" fontWeight="bold">
+            Falconiere Barbosa
+          </Text>
+          <Text color="white" fontWeight="bold">
+            @falconiererb
+          </Text>
+        </Column>
+      </Row>
+      {routes.map(({label, routeName}) => (
         <Pressable
-          onPress={() => navigation.navigate(route.route)}
-          key={`drawer-key-${route.route}`}>
-          {route.label}
+          onPress={() => handleNavigation(routeName)}
+          key={`drawer-key-${routeName}`}>
+          <Text color="white">{label}</Text>
         </Pressable>
       ))}
     </ScrollView>

@@ -19,6 +19,7 @@ export type RootStackParamList = {
   Notifications: undefined;
   Messages: undefined;
   PostForm: undefined;
+  Login: undefined;
   PrivateNavigation: PrivateNavigationList;
 };
 

@@ -1,5 +1,4 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
 import {PostForm} from 'domains/timeline/screens/PostForm';
 
 import {SideBarNavigation} from './SideBarNavigation';

@@ -3,23 +3,21 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {PrivateNavigation} from 'domains/navigation/PrivateNavigation';
 import {RootStackParamList} from 'domains/navigation/types';
+import {Login} from 'domains/signinup/screens/Login';
 
 import {QueryClientProvider} from 'providers/QueryClient';
-
 import {ThemeProvider} from 'providers/Theme';
 
-const RootStack = createNativeStackNavigator<RootStackParamList>();
+const {Navigator, Screen} = createNativeStackNavigator<RootStackParamList>();
 export function Routes() {
   return (
     <QueryClientProvider>
       <ThemeProvider>
         <NavigationContainer>
-          <RootStack.Navigator screenOptions={{headerShown: false}}>
-            <RootStack.Screen
-              name="PrivateNavigation"
-              component={PrivateNavigation}
-            />
-          </RootStack.Navigator>
+          <Navigator screenOptions={{headerShown: false}}>
+            <Screen name="Login" component={Login} />
+            <Screen name="PrivateNavigation" component={PrivateNavigation} />
+          </Navigator>
         </NavigationContainer>
       </ThemeProvider>
     </QueryClientProvider>

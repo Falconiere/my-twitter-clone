@@ -1,17 +1,44 @@
+import {Box, Text} from 'native-base';
 import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
-import {ScrollView, Text, View} from 'native-base';
+
+import {ProfileHeader} from '../components/ProfileHeader';
+import {Tabs} from 'components/Tabs';
+import {Posts} from '../containers/Posts';
+import {FloatPencilButton} from 'components/FloatPencilButton';
+
+const tabItems = [
+  {
+    title: 'Posts',
+    Component: Posts,
+  },
+  {
+    title: 'Posts & Replies',
+    Component: Posts,
+  },
+  {
+    title: 'Media',
+    Component: Posts,
+  },
+  {
+    title: 'Likes',
+    Component: Posts,
+  },
+];
 
 export function Profile() {
   return (
     <>
-      <NavigationHeader />
-      <ScrollView _contentContainerStyle={{flex: 1}} bg="background.default">
-        <View flex={1} alignItems="center">
-          <Text color="white" m="auto">
-            Profile
-          </Text>
-        </View>
-      </ScrollView>
+      <NavigationHeader
+        headerCenter={
+          <Box>
+            <Text fontWeight="bold">Falconiere R. Barbosa</Text>
+            <Text color="brand.lightGray">1,278 Likes</Text>
+          </Box>
+        }
+      />
+      <ProfileHeader />
+      <Tabs items={tabItems} />
+      <FloatPencilButton />
     </>
   );
 }

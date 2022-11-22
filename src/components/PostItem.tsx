@@ -10,7 +10,7 @@ type Props = IPostIem;
 export function PostItem(props: Props) {
   const {text, avatar, name, nickname} = props;
   return (
-    <Pressable py={2}>
+    <Pressable py={2} px={5}>
       <Row space={2} w="100%">
         <Avatar source={{uri: avatar}} size="sm" />
         <Column flex={1}>

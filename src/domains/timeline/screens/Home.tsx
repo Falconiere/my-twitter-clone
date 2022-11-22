@@ -17,17 +17,14 @@ export function Home() {
       <FlatList
         data={data}
         renderItem={renderItem}
-        ItemSeparatorComponent={() => <Divider bg="brand.gray" />}
+        ItemSeparatorComponent={() => <Divider />}
         ListEmptyComponent={() => (
           <View alignItems="center" justifyItems="center" h="100%" flex={1}>
             <Box m="auto">
-              <Text color="white">No data available :/</Text>
+              <Text>No data available :/</Text>
             </Box>
           </View>
         )}
-        bg="brand.darkBlue"
-        p="4"
-        contentContainerStyle={{flex: 1}}
       />
     </>
   );

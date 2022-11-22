@@ -5,7 +5,8 @@ const brand: BrandColors = {
   primary: '#E98A15',
   secondary: '#F5F5F5',
   gray: '#B0B2B8',
-  lightGray: '#ffffff33',
+  lightGray: 'rgb(113, 118, 123)',
+  mediumGray: '#fff',
   white: '#fff',
   background: '#2B2D42',
   yellow: '#FFD25A',
@@ -46,6 +47,7 @@ interface BrandColors {
   darkBlue: string;
   warning: string;
   lightGray: string;
+  mediumGray: string;
 }
 
 export interface Colors

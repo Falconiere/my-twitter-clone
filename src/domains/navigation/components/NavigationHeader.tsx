@@ -1,7 +1,8 @@
-import {useNavigation} from '@react-navigation/native';
-import {HStack, StatusBar, Text} from 'native-base';
-import {colors} from 'providers/Theme/colors';
 import {ReactNode} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {HStack, ITheme, StatusBar, Text} from 'native-base';
+import {Leaves} from 'native-base/lib/typescript/theme/base/types';
+import {colors} from 'providers/Theme/colors';
 
 import {Icon} from 'components/Icon';
 import {Pressable} from 'components/Pressable';
@@ -14,6 +15,7 @@ type Props = {
   onPressRight?: () => void;
   hideBackButton?: boolean;
   noSafeArea?: boolean;
+  bg?: Leaves<ITheme['colors']>;
 };
 
 export function NavigationHeader(props: Props) {
@@ -25,6 +27,7 @@ export function NavigationHeader(props: Props) {
     onPressRight,
     noSafeArea = false,
     hideBackButton = false,
+    bg,
   } = props;
 
   const navigation = useNavigation();
@@ -43,9 +46,12 @@ export function NavigationHeader(props: Props) {
     <>
       <StatusBar barStyle="light-content" backgroundColor={colors.black} />
       <HStack
-        bg="brand.black"
-        p={4}
+        bg={bg ?? 'brand.black'}
+        px={4}
+        py={1}
+        alignItems="center"
         justifyContent="space-between"
+        minH={45}
         {...(noSafeArea ? {} : {safeAreaTop: true})}>
         <Pressable onPress={handleOnPressLeft} minW={10}>
           {headerLeft ? (

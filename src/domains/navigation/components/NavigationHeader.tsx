@@ -1,15 +1,15 @@
 import {useNavigation} from '@react-navigation/native';
-import {HStack, StatusBar} from 'native-base';
+import {HStack, StatusBar, Text} from 'native-base';
 import {colors} from 'providers/Theme/colors';
 import {ReactNode} from 'react';
 
-import {Icon} from '../../../components/Icon';
-import {Pressable} from '../../../components/Pressable';
+import {Icon} from 'components/Icon';
+import {Pressable} from 'components/Pressable';
 
 type Props = {
   headerLeft?: ReactNode;
   headerRight?: ReactNode;
-  headerCenter?: ReactNode;
+  headerCenter?: ReactNode | string;
   onPressLeft?: () => void;
   onPressRight?: () => void;
   hideBackButton?: boolean;
@@ -23,7 +23,7 @@ export function NavigationHeader(props: Props) {
     headerCenter,
     onPressLeft,
     onPressRight,
-    safeAreaTop,
+    safeAreaTop = true,
     hideBackButton = false,
   } = props;
 
@@ -54,7 +54,13 @@ export function NavigationHeader(props: Props) {
             <Icon name="arrow-left" size={20} color="white" />
           ) : null}
         </Pressable>
-        {headerCenter}
+        {typeof headerCenter === 'string' ? (
+          <Text color="white" fontWeight="medium">
+            {headerCenter}
+          </Text>
+        ) : (
+          headerCenter
+        )}
         <Pressable onPress={onPressRight} minW={10}>
           {headerRight}
         </Pressable>

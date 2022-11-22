@@ -7,6 +7,7 @@ import {Login} from 'domains/signinup/screens/Login';
 
 import {QueryClientProvider} from 'providers/QueryClient';
 import {ThemeProvider} from 'providers/Theme';
+import {SignupNavigation} from 'domains/navigation/SignupNavigation';
 
 const {Navigator, Screen} = createNativeStackNavigator<RootStackParamList>();
 export function Routes() {
@@ -16,6 +17,7 @@ export function Routes() {
         <NavigationContainer>
           <Navigator screenOptions={{headerShown: false}}>
             <Screen name="Login" component={Login} />
+            <Screen name="SignupNavigation" component={SignupNavigation} />
             <Screen name="PrivateNavigation" component={PrivateNavigation} />
           </Navigator>
         </NavigationContainer>

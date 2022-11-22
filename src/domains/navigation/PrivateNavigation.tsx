@@ -1,10 +1,11 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {PostForm} from 'domains/timeline/screens/PostForm';
 import {Profile} from 'domains/user/screens/Profile';
+import {PrivateNavigationList} from 'routes/types';
 
 import {SideBarNavigation} from './SideBarNavigation';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<PrivateNavigationList>();
 
 export function PrivateNavigation() {
   return (

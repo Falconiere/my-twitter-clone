@@ -14,6 +14,9 @@ export function Login() {
         <Button onPress={() => navigation.navigate('PrivateNavigation')}>
           Login
         </Button>
+        <Button onPress={() => navigation.navigate('SignupNavigation')}>
+          Sign up
+        </Button>
       </VStack>
     </ScrollView>
   );

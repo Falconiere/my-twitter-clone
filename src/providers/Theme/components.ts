@@ -1,5 +1,7 @@
 import {Theme} from 'native-base';
+import {InterfaceScrollViewProps} from 'native-base/lib/typescript/components/basic/ScrollView/types';
 import {InterfaceButtonProps} from 'native-base/lib/typescript/components/primitives/Button/types';
+import {InterfaceInputProps} from 'native-base/lib/typescript/components/primitives/Input/types';
 import {Component, Variant} from './types';
 
 export const components: CustomComponents = {
@@ -17,6 +19,21 @@ export const components: CustomComponents = {
       variant: 'primary',
     },
   },
+  ScrollView: {
+    baseStyle: {
+      bg: 'background.dark',
+      p: 6,
+      _contentContainerStyle: {
+        flex: 1,
+      },
+    },
+  },
+  Input: {
+    baseStyle: {
+      minH: 45,
+      fontSize: 'lg',
+    },
+  },
 };
 
 type NativeBaseComponents = {
@@ -30,6 +47,8 @@ interface CustomComponents {
       primary: Variant<InterfaceButtonProps>;
     }
   >;
+  ScrollView: Component<InterfaceScrollViewProps>;
+  Input: Component<InterfaceInputProps>;
 }
 
 export type Components = CustomComponents &

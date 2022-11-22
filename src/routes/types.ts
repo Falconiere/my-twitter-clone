@@ -22,7 +22,7 @@ export type RootStackParamList = {
   Login: undefined;
   Profile: undefined;
   Settings: undefined;
-  PrivateNavigation: PrivateNavigationList;
+  PrivateNavigation: PrivateNavigationList | undefined;
 };
 
 export type Routes = {

@@ -1,20 +1,21 @@
 import {Avatar, Column, Row, ScrollView, Text} from 'native-base';
 import {DrawerActions, useNavigation} from '@react-navigation/native';
 
-import {Pressable} from './Pressable';
+import {Pressable} from '../../../components/Pressable';
 import {Routes} from 'domains/navigation/types';
 import {avatarUrl} from 'mocks/twitters';
+import {SidebarHeader} from './SidebarHeader';
 
-export type DrawerContentItem = {
+export type SidebarContentItem = {
   label: string;
   routeName: keyof Routes;
 };
 
-type DrawerContentProps = {
-  routes: Array<DrawerContentItem>;
+type SidebarContentProps = {
+  routes: Array<SidebarContentItem>;
 };
 
-export function DrawerContent(props: DrawerContentProps) {
+export function SidebarContent(props: SidebarContentProps) {
   const {routes} = props;
   const navigation = useNavigation();
   const handleNavigation = (route: keyof Routes) => {
@@ -24,17 +25,7 @@ export function DrawerContent(props: DrawerContentProps) {
 
   return (
     <ScrollView bg="brand.black" p="4">
-      <Row safeAreaTop space={2}>
-        <Avatar source={{uri: avatarUrl}} />
-        <Column>
-          <Text color="white" fontWeight="bold">
-            Falconiere Barbosa
-          </Text>
-          <Text color="white" fontWeight="bold">
-            @falconiererb
-          </Text>
-        </Column>
-      </Row>
+      <SidebarHeader />
       {routes.map(({label, routeName}) => (
         <Pressable
           onPress={() => handleNavigation(routeName)}

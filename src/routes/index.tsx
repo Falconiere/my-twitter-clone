@@ -15,8 +15,8 @@ export function Routes() {
       <ThemeProvider>
         <NavigationContainer>
           <Navigator screenOptions={{headerShown: false}}>
-            <Screen name="Login" component={Login} />
             <Screen name="PrivateNavigation" component={PrivateNavigation} />
+            <Screen name="Login" component={Login} />
           </Navigator>
         </NavigationContainer>
       </ThemeProvider>

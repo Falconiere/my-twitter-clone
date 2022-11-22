@@ -13,15 +13,7 @@ export function Home() {
 
   return (
     <>
-      <NavigationHeader
-        safeAreaTop
-        headerLeft={<AvatarHeader />}
-        headerCenter={
-          <Text color="white" fontWeight="bold">
-            Home
-          </Text>
-        }
-      />
+      <NavigationHeader headerLeft={<AvatarHeader />} headerCenter="Home" />
       <FlatList
         data={data}
         renderItem={renderItem}

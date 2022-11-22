@@ -13,7 +13,7 @@ type Props = {
   onPressLeft?: () => void;
   onPressRight?: () => void;
   hideBackButton?: boolean;
-  safeAreaTop?: boolean;
+  noSafeArea?: boolean;
 };
 
 export function NavigationHeader(props: Props) {
@@ -23,7 +23,7 @@ export function NavigationHeader(props: Props) {
     headerCenter,
     onPressLeft,
     onPressRight,
-    safeAreaTop = true,
+    noSafeArea = false,
     hideBackButton = false,
   } = props;
 
@@ -46,7 +46,7 @@ export function NavigationHeader(props: Props) {
         bg="brand.black"
         p={4}
         justifyContent="space-between"
-        safeAreaTop={safeAreaTop}>
+        {...(noSafeArea ? {} : {safeAreaTop: true})}>
         <Pressable onPress={handleOnPressLeft} minW={10}>
           {headerLeft ? (
             headerLeft

@@ -5,15 +5,7 @@ import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
 export function Messages() {
   return (
     <>
-      <NavigationHeader
-        safeAreaTop
-        headerLeft={<AvatarHeader />}
-        headerCenter={
-          <Text color="white" fontWeight="bold">
-            Messages
-          </Text>
-        }
-      />
+      <NavigationHeader headerLeft={<AvatarHeader />} headerCenter="Messages" />
       <View
         flex={1}
         alignItems="center"

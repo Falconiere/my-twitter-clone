@@ -4,7 +4,7 @@ import {ScrollView, Text, View} from 'native-base';
 export function Settings() {
   return (
     <>
-      <NavigationHeader safeAreaTop />
+      <NavigationHeader />
       <ScrollView _contentContainerStyle={{flex: 1}} bg="background.default">
         <View flex={1} alignItems="center">
           <Text color="white" m="auto">

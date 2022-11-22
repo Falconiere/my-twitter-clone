@@ -15,6 +15,7 @@ export function PostForm() {
 
   const mutation = useTimeLineCreate();
   const navigation = useNavigation();
+
   const handleOnSubmit = () => {
     if (value.length > 0) {
       mutation.mutate({
@@ -30,6 +31,7 @@ export function PostForm() {
   return (
     <>
       <NavigationHeader
+        noSafeArea
         headerRight={<Text color="white">Post</Text>}
         onPressRight={handleOnSubmit}
       />

@@ -5,15 +5,7 @@ import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
 export function Explorer() {
   return (
     <>
-      <NavigationHeader
-        safeAreaTop
-        headerLeft={<AvatarHeader />}
-        headerCenter={
-          <Text color="white" fontWeight="bold">
-            Explorer
-          </Text>
-        }
-      />
+      <NavigationHeader headerLeft={<AvatarHeader />} headerCenter="Explorer" />
       <View
         flex={1}
         alignItems="center"

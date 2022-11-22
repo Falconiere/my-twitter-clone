@@ -6,13 +6,8 @@ export function Notifications() {
   return (
     <>
       <NavigationHeader
-        safeAreaTop
         headerLeft={<Avatar source={{uri: avatarUrl}} size="xs" />}
-        headerCenter={
-          <Text color="white" fontWeight="bold">
-            Notifications
-          </Text>
-        }
+        headerCenter="Notifications"
       />
       <View
         flex={1}

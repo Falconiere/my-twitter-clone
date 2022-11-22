@@ -1,5 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {PostForm} from 'domains/timeline/screens/PostForm';
+import {Profile} from 'domains/user/screens/Profile';
 
 import {SideBarNavigation} from './SideBarNavigation';
 
@@ -10,6 +11,7 @@ export function PrivateNavigation() {
     <>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="SideBarNavigation" component={SideBarNavigation} />
+        <Stack.Screen name="Profile" component={Profile} />
         <Stack.Group screenOptions={{presentation: 'modal'}}>
           <Stack.Screen name="PostForm" component={PostForm} />
         </Stack.Group>

@@ -2,7 +2,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {PrivateNavigation} from 'domains/navigation/PrivateNavigation';
-import {RootStackParamList} from 'domains/navigation/types';
+import {RootStackParamList} from 'routes/types';
 import {Login} from 'domains/signinup/screens/Login';
 
 import {QueryClientProvider} from 'providers/QueryClient';

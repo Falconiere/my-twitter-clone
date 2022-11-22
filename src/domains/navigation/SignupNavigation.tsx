@@ -4,7 +4,7 @@ import {DateOfBirth} from 'domains/signinup/screens/DateOfBirth';
 import {Email} from 'domains/signinup/screens/Email';
 import {Password} from 'domains/signinup/screens/Password';
 import {UserName} from 'domains/signinup/screens/UserName';
-import {SignupNavigationList} from 'routes/types';
+import {SignupNavigationList} from 'domains/navigation/types';
 
 const {Navigator, Screen} = createNativeStackNavigator<SignupNavigationList>();
 

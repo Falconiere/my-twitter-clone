@@ -8,7 +8,7 @@ import {Home} from 'domains/timeline/screens/Home';
 import {Messages} from 'domains/timeline/screens/Messages';
 import {Notifications} from 'domains/timeline/screens/Notifications';
 import {colors} from 'providers/Theme/colors';
-import {MainBottomNavigationList} from 'routes/types';
+import {MainBottomNavigationList} from 'domains/navigation/types';
 
 const Tab = createMaterialBottomTabNavigator<MainBottomNavigationList>();
 export const MainBottomNavigation = () => (

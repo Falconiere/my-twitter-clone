@@ -1,6 +1,6 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {SidebarContent} from 'domains/navigation/components/SidebarContent';
-import {SideBarNavigationList} from 'routes/types';
+import {SideBarNavigationList} from 'domains/navigation/types';
 
 import {MainBottomNavigation} from './MainBottomNavigation';
 

@@ -2,7 +2,7 @@ import {Row, ScrollView, Text} from 'native-base';
 import {DrawerActions, useNavigation} from '@react-navigation/native';
 
 import {Pressable} from 'components/Pressable';
-import {Routes} from 'routes/types';
+import {Routes} from 'domains/navigation/types';
 import {SidebarHeader} from './SidebarHeader';
 
 import {Icon} from 'components/Icon';

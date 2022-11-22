@@ -3,7 +3,7 @@ import {Box, Divider, FlatList, Text, View} from 'native-base';
 import {useTimeLine} from 'api/queries/useTimeLine';
 
 import {IPostIem, PostItem} from 'components/PostItem';
-import {NavigationHeader} from 'components/NavigationHeader';
+import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
 import {AvatarHeader} from 'components/AvatarHeader';
 
 export function Home() {

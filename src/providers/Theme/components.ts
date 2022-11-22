@@ -32,6 +32,7 @@ export const components: CustomComponents = {
     baseStyle: {
       minH: 45,
       fontSize: 'lg',
+      color: 'white',
     },
   },
 };

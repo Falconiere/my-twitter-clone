@@ -3,8 +3,8 @@ import {HStack, StatusBar} from 'native-base';
 import {colors} from 'providers/Theme/colors';
 import {ReactNode} from 'react';
 
-import {Icon} from './Icon';
-import {Pressable} from './Pressable';
+import {Icon} from '../../../components/Icon';
+import {Pressable} from '../../../components/Pressable';
 
 type Props = {
   headerLeft?: ReactNode;

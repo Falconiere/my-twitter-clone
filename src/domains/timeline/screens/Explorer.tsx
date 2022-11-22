@@ -1,6 +1,6 @@
 import {Text, View} from 'native-base';
 import {AvatarHeader} from 'components/AvatarHeader';
-import {NavigationHeader} from 'components/NavigationHeader';
+import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
 
 export function Explorer() {
   return (

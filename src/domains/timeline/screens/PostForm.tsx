@@ -3,7 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 
 import {Avatar, Column, Row, Text, TextArea, View} from 'native-base';
 
-import {NavigationHeader} from 'components/NavigationHeader';
+import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
 import {avatarUrl} from 'mocks/twitters';
 
 import {useTimeLineCreate} from 'api/queries/useTimeLineCreate';

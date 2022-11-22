@@ -1,4 +1,4 @@
-import {NavigationHeader} from 'components/NavigationHeader';
+import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
 import {avatarUrl} from 'mocks/twitters';
 import {Avatar, Text, View} from 'native-base';
 

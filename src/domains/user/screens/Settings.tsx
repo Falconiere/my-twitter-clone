@@ -1,4 +1,4 @@
-import {NavigationHeader} from 'components/NavigationHeader';
+import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
 import {ScrollView, Text, View} from 'native-base';
 
 export function Settings() {

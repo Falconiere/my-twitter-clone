@@ -1,7 +1,11 @@
-import {config} from '@tamagui/config-base';
+import {config as configBase} from '@tamagui/config-base';
 import {createTamagui} from '@tamagui/core';
+import {tokens} from './tokens';
 
-const appConfig = createTamagui(config);
+const appConfig = createTamagui({
+  ...configBase,
+  tokens,
+});
 
 export type AppConfig = typeof appConfig;
 

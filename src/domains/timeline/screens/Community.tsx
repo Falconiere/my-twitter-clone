@@ -5,7 +5,11 @@ import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
 export function Community() {
   return (
     <>
-      <NavigationHeader headerLeft={<AvatarHeader />} headerCenter="Explorer" />
+      <NavigationHeader
+        headerLeft={<AvatarHeader />}
+        headerCenter="Explorer"
+        safeAreaTop
+      />
       <View
         flex={1}
         alignItems="center"

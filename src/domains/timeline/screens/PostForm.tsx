@@ -31,7 +31,6 @@ export function PostForm() {
   return (
     <>
       <NavigationHeader
-        noSafeArea
         headerRight={<Text color="white">Post</Text>}
         onPressRight={handleOnSubmit}
       />

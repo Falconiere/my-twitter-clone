@@ -1,11 +1,13 @@
 import {ReactNode} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {HStack, ITheme, StatusBar, Text} from 'native-base';
-import {Leaves} from 'native-base/lib/typescript/theme/base/types';
-import {colors} from 'providers/Theme/colors';
-
+import {StatusBar} from 'react-native';
 import {Icon} from 'components/Icon';
 import {Pressable} from 'components/Pressable';
+
+import {tokens} from 'providers/TamaguiProvider/tokens';
+
+import {Text} from 'tamagui';
+import {SafeStack} from 'components/SafeStack';
 
 type Props = {
   headerLeft?: ReactNode;
@@ -14,8 +16,8 @@ type Props = {
   onPressLeft?: () => void;
   onPressRight?: () => void;
   hideBackButton?: boolean;
-  noSafeArea?: boolean;
-  bg?: Leaves<ITheme['colors']>;
+  safeAreaTop?: boolean;
+  bg?: keyof typeof tokens.color;
 };
 
 export function NavigationHeader(props: Props) {
@@ -25,7 +27,7 @@ export function NavigationHeader(props: Props) {
     headerCenter,
     onPressLeft,
     onPressRight,
-    noSafeArea = false,
+    safeAreaTop,
     hideBackButton = false,
     bg,
   } = props;
@@ -44,16 +46,21 @@ export function NavigationHeader(props: Props) {
 
   return (
     <>
-      <StatusBar barStyle="light-content" backgroundColor={colors.black} />
-      <HStack
-        bg={bg ?? 'brand.black'}
-        px={4}
-        py={1}
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={tokens.color.black.val}
+      />
+      <SafeStack
+        flexDirection="row"
+        backgroundColor={bg ?? '$black'}
+        px={20}
+        py={10}
+        paddingTop={10}
         alignItems="center"
         justifyContent="space-between"
-        minH={45}
-        {...(noSafeArea ? {} : {safeAreaTop: true})}>
-        <Pressable onPress={handleOnPressLeft} minW={10}>
+        minHeight={45}
+        safeAreaTop={safeAreaTop}>
+        <Pressable onPress={handleOnPressLeft}>
           {headerLeft ? (
             headerLeft
           ) : navigation.canGoBack() ? (
@@ -61,16 +68,12 @@ export function NavigationHeader(props: Props) {
           ) : null}
         </Pressable>
         {typeof headerCenter === 'string' ? (
-          <Text color="white" fontWeight="medium">
-            {headerCenter}
-          </Text>
+          <Text color="$white">{headerCenter}</Text>
         ) : (
           headerCenter
         )}
-        <Pressable onPress={onPressRight} minW={10}>
-          {headerRight}
-        </Pressable>
-      </HStack>
+        <Pressable onPress={onPressRight}>{headerRight}</Pressable>
+      </SafeStack>
     </>
   );
 }

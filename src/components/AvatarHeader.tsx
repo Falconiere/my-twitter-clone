@@ -12,7 +12,7 @@ export function AvatarHeader() {
   };
   return (
     <Pressable onPress={toggleSideBar}>
-      <Avatar source={{uri: avatarUrl}} size="xs" />
+      <Avatar source={{uri: avatarUrl}} size="xs" color="brand.darkBlue" />
     </Pressable>
   );
 }

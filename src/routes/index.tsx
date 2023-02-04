@@ -8,20 +8,23 @@ import {Login} from 'domains/signinup/screens/Login';
 import {QueryClientProvider} from 'providers/QueryClient';
 import {ThemeProvider} from 'providers/Theme';
 import {SignupNavigation} from 'domains/navigation/SignupNavigation';
+import {TamaguiProvider} from 'providers/TamaguiProvider';
 
 const {Navigator, Screen} = createNativeStackNavigator<RootStackParamList>();
 export function Routes() {
   return (
     <QueryClientProvider>
-      <ThemeProvider>
-        <NavigationContainer>
-          <Navigator screenOptions={{headerShown: false}}>
-            <Screen name="Login" component={Login} />
-            <Screen name="SignupNavigation" component={SignupNavigation} />
-            <Screen name="PrivateNavigation" component={PrivateNavigation} />
-          </Navigator>
-        </NavigationContainer>
-      </ThemeProvider>
+      <TamaguiProvider>
+        <ThemeProvider>
+          <NavigationContainer>
+            <Navigator screenOptions={{headerShown: false}}>
+              <Screen name="Login" component={Login} />
+              <Screen name="SignupNavigation" component={SignupNavigation} />
+              <Screen name="PrivateNavigation" component={PrivateNavigation} />
+            </Navigator>
+          </NavigationContainer>
+        </ThemeProvider>
+      </TamaguiProvider>
     </QueryClientProvider>
   );
 }

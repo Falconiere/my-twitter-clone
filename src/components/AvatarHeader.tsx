@@ -1,5 +1,6 @@
 import {DrawerActions, useNavigation} from '@react-navigation/native';
 import {Avatar} from 'tamagui';
+
 import {Pressable} from './Pressable';
 
 export function AvatarHeader() {

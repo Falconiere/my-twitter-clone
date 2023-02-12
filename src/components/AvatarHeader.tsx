@@ -1,8 +1,5 @@
-import {Avatar} from 'native-base';
 import {DrawerActions, useNavigation} from '@react-navigation/native';
-
-import {avatarUrl} from 'mocks/twitters';
-
+import {Avatar} from 'tamagui';
 import {Pressable} from './Pressable';
 
 export function AvatarHeader() {
@@ -12,7 +9,10 @@ export function AvatarHeader() {
   };
   return (
     <Pressable onPress={toggleSideBar}>
-      <Avatar source={{uri: avatarUrl}} size="xs" color="brand.darkBlue" />
+      <Avatar circular size="$2">
+        <Avatar.Image src="http://placekitten.com/200/300" />
+        <Avatar.Fallback bc="grey" />
+      </Avatar>
     </Pressable>
   );
 }

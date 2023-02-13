@@ -1,12 +1,12 @@
 import {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 
-import {Avatar, Column, Row, Text, TextArea, View} from 'native-base';
-
 import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
 import {avatarUrl} from 'mocks/twitters';
 
 import {useTimeLineCreate} from 'api/queries/useTimeLineCreate';
+import {Avatar, Text, XStack, YStack, TextArea} from 'tamagui';
+import {Platform} from 'react-native';
 
 const maxTextLength = 250;
 
@@ -31,33 +31,35 @@ export function PostForm() {
   return (
     <>
       <NavigationHeader
-        headerRight={<Text color="white">Post</Text>}
+        headerRight={<Text>Post</Text>}
         onPressRight={handleOnSubmit}
+        safeAreaTop={!(Platform.OS === 'ios')}
       />
-      <View bg="background.default" p={4} flex={1} w="100%">
-        <Row w="100%" space={2} minH={120}>
-          <Avatar source={{uri: avatarUrl}} size="sm" />
-          <Column flex={1}>
+      <YStack flex={1} backgroundColor="$background" width="100%">
+        <XStack space={10} padding="$2">
+          <Avatar circular size="$2" width="$2">
+            <Avatar.Image src={avatarUrl} />
+            <Avatar.Fallback backgroundColor="grey" />
+          </Avatar>
+          <YStack flex={1}>
             <TextArea
-              value={value}
+              borderWidth={2}
+              size="$4"
+              color="$white"
+              padding="$2"
               onChangeText={setValue}
-              autoCompleteType="none"
-              color="white"
-              placeholder="What are you thinking about today?"
-              placeholderTextColor="brand.gray"
-              maxLength={maxTextLength}
+              value={value}
               multiline
-              flex={1}
-              p="3"
+              placeholderTextColor="gray"
+              borderColor="gray"
+              borderStyle={'dashed'}
             />
-            <Text
-              color={maxTextLength - value?.length < 20 ? 'warning' : 'white'}
-              fontWeight="medium">
+            <Text color="$white">
               {value?.length}/{maxTextLength}
             </Text>
-          </Column>
-        </Row>
-      </View>
+          </YStack>
+        </XStack>
+      </YStack>
     </>
   );
 }

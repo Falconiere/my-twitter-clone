@@ -1,4 +1,7 @@
+import {color as baseColors} from '@tamagui/theme-base';
+
 const colors = {
+  ...baseColors,
   black: '#191919',
   primary: '#E98A15',
   secondary: '#F5F5F5',
@@ -13,6 +16,9 @@ const colors = {
   orange: '#FF785A',
   darkBlue: '#2B2D42',
   warning: '#FF785A',
+  borderColor: '#EDED',
+  shadowColor: '#EDED',
+  placeholderColor: '#EDED',
 };
 
 export {colors};

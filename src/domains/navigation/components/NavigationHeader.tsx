@@ -4,7 +4,7 @@ import {StatusBar} from 'react-native';
 import {Icon} from 'components/Icon';
 import {Pressable} from 'components/Pressable';
 
-import {tokens} from 'providers/TamaguiProvider/tokens';
+import {colors} from 'providers/TamaguiProvider/colors';
 
 import {Text} from 'tamagui';
 import {SafeStack} from 'components/SafeStack';
@@ -17,7 +17,7 @@ type Props = {
   onPressRight?: () => void;
   hideBackButton?: boolean;
   safeAreaTop?: boolean;
-  bg?: keyof typeof tokens.color;
+  bg?: keyof typeof colors;
 };
 
 export function NavigationHeader(props: Props) {
@@ -27,7 +27,7 @@ export function NavigationHeader(props: Props) {
     headerCenter,
     onPressLeft,
     onPressRight,
-    safeAreaTop,
+    safeAreaTop = true,
     hideBackButton = false,
     bg,
   } = props;
@@ -46,10 +46,7 @@ export function NavigationHeader(props: Props) {
 
   return (
     <>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor={tokens.color.black.val}
-      />
+      <StatusBar barStyle="light-content" backgroundColor={colors.black} />
       <SafeStack
         flexDirection="row"
         backgroundColor={bg ?? '$black'}

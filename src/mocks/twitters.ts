@@ -1,5 +1,5 @@
 export const avatarUrl =
-  'https://pbs.twimg.com/profile_images/1577814252479545348/dYf3l-kv_x96.jpg';
+  'https://pbs.twimg.com/profile_images/1621516173639823361/qF_As4l8_400x400.jpg';
 export const coverImage =
   'https://pbs.twimg.com/profile_banners/2435959626/1652473014/1500x500';
 export const twitters = [

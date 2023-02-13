@@ -1,18 +1,30 @@
-import {config as configBase} from '@tamagui/config-base';
+import {config as baseConfig, createGenericFont} from '@tamagui/config-base';
 import {createTamagui} from '@tamagui/core';
 import {tokens} from './tokens';
+import {themes} from './themes';
 
-const appConfig = createTamagui({
-  ...configBase,
+const config = createTamagui({
+  ...baseConfig,
   tokens,
+  themes,
+  fonts: {
+    heading: createGenericFont('Open Sans'),
+    body: createGenericFont('Open Sans'),
+  },
+  defaultProps: {
+    TextArea: {
+      borderBottomStyle: undefined,
+    },
+  },
 });
 
-export type AppConfig = typeof appConfig;
-
-declare module '@tamagui/core' {
+declare module 'tamagui' {
   // overrides TamaguiCustomConfig so your custom types
+
   // work everywhere you import `tamagui`
-  interface TamaguiCustomConfig extends AppConfig {}
+  type TamaguiCustomConfig = typeof config;
+
+  type ThemeFallbackValue = {};
 }
 
-export default appConfig;
+export default config;

@@ -1,22 +1,21 @@
+import {AvatarHeader} from 'components/AvatarHeader';
 import {NavigationHeader} from 'domains/navigation/components/NavigationHeader';
-import {avatarUrl} from 'mocks/twitters';
-import {Avatar, Text, View} from 'native-base';
+import {Text, YStack} from 'tamagui';
 
 export function Notifications() {
   return (
     <>
       <NavigationHeader
-        headerLeft={<Avatar source={{uri: avatarUrl}} size="xs" />}
+        headerLeft={<AvatarHeader />}
         headerCenter="Notifications"
-        safeAreaTop
       />
-      <View
+      <YStack
         flex={1}
         alignItems="center"
         justifyContent="center"
-        bg="background.default">
-        <Text color={'white'}>Notifications</Text>
-      </View>
+        backgroundColor="$background">
+        <Text color="$white">Notifications</Text>
+      </YStack>
     </>
   );
 }
